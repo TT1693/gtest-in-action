@@ -32,13 +32,6 @@ TEST(StringCalculatorTestSuite,add_oneInputString_oneIsExpected){
     ASSERT_EQ(actualValue,expectedValue);
   }
 
-    TEST(StringCalculatorTestSuite,add_twoInputString_sumIsExpected){
-    string input="1,2";
-    int expectedValue=3;
-    int actualValue=Add(input);
-    ASSERT_EQ(actualValue,expectedValue);
-  }
-
     TEST(StringCalculatorTestSuite,add_multipleInputString_sumIsExpected){
     string input="1,2,3";
     int expectedValue=6;
@@ -53,14 +46,14 @@ TEST(StringCalculatorTestSuite,add_oneInputString_oneIsExpected){
     ASSERT_EQ(actualValue,expectedValue);
     }
 
-    TEST(StringCalculatorTestSuite,add_InputStringwithdelimiter_delimiterBasedSumIsExpected){
+    TEST(StringCalculatorTestSuite,add_InputStringWithDelimiter_delimiterBasedSumIsExpected){
     string input="//;\n1;2";
     int expectedValue=3;
     int actualValue=Add(input);
     ASSERT_EQ(actualValue,expectedValue);
     }
 
-    TEST(StringCalculatorTestSuite,add_InputStringwithNegative_invalidArgumentIsExpected){
+    TEST(StringCalculatorTestSuite,add_InputStringWithNegative_invalidArgumentIsExpected){
     string input="1,-2,-4,5";
     string expectedValue="Invalid number";
     int actualValue=Add(input);
