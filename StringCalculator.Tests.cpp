@@ -9,6 +9,7 @@ TEST(StringCalculatorTestSuite,add_emptyInputString_ZeroIsExpected){
   int actualValue=Add(input);
   //Assert
   ASSERT_EQ(actualValue,expectedValue);
+}
 
   TEST(StringCalculatorTestSuite,add_zeroInputString_ZeroIsExpected){
     string input="0";
