@@ -30,6 +30,12 @@ TEST(StringCalculatorTestSuite,add_oneInputString_oneIsExpected){
     int expectedValue=3;
     int actualValue=Add(input);
     ASSERT_EQ(actualValue,expectedValue);
+
+    TEST(StringCalculatorTestSuite,add_twoInputString_sumIsExpected){
+    string input="1,2";
+    int expectedValue=3;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
   }
 
     TEST(StringCalculatorTestSuite,add_multipleInputString_sumIsExpected){
@@ -50,5 +56,40 @@ TEST(StringCalculatorTestSuite,add_oneInputString_oneIsExpected){
     string input="//;\n1;2";
     int expectedValue=3;
     int actualValue=Add(input);
-    ASSERT_EQ(actualValue,expectedValue);    
-}
+    ASSERT_EQ(actualValue,expectedValue);
+    }
+
+    TEST(StringCalculatorTestSuite,add_InputStringwithNegative_invalidArgumentIsExpected){
+    string input="1,-2,-4,5";
+    string expectedValue="Invalid number";
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
+    }
+
+    TEST(StringCalculatorTestSuite,add_InputStringOver1000_ignoreThatNumberIsExpected){
+    string input="42,1001,3";
+    int expectedValue=45;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
+    }
+
+    TEST(StringCalculatorTestSuite,add_InputStringWithMultiCharDelimiter_ignoreThatNumberIsExpected){
+    string input="//[***]\n8***2***3";
+    int expectedValue=13;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
+    }
+
+    TEST(StringCalculatorTestSuite,add_InputStringWithMultiDelimiter_ignoreThatNumberIsExpected){
+    string input="//[*][%]\n4*2%3";
+    int expectedValue=9;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
+    }
+
+    TEST(StringCalculatorTestSuite,add_InputStringWithMultipleMultiDelimiter_ignoreThatNumberIsExpected){
+    string input="//[**][%^]\n4**1%^9";
+    int expectedValue=14;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
+    }
