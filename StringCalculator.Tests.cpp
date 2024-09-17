@@ -2,18 +2,21 @@
 #include <gtest/gtest.h>
 
 //tringCalculatorfixture is test suite name and call backs by gtest
-class StringCalculatorfixture:public testing:Test{
+class StringCalculatorFixture:public testing::Test{
 protected:
-      string input;
-      int expectedValue;
-      int actualValue;
+    string input;
+    int expectedValue;
+    int actualValue;
 };
 
-TEST(StringCalculatorfixture,add_emptyInputString_ZeroIsExpected){
-input="";
-expectedValue=0;
-actualValue=Add(input);
-ASSERT_EQ(actualValue,expectedValue);
+TEST_F(StringCalculatorFixture,add_emptyInputString_ZeroIsExpected){
+  //Arrange
+   input="";
+  expectedValue=0;
+  //Act
+  actualValue=Add(input);
+  //Assert
+  ASSERT_EQ(actualValue,expectedValue);
 }
 
 TEST(StringCalculatorTestSuite,add_emptyInputString_ZeroIsExpected){
