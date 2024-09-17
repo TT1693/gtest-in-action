@@ -7,7 +7,7 @@ protected:
       string input;
       int expectedValue;
       int actualValue;
-}
+};
 
 TEST(StringCalculatorfixture,add_emptyInputString_ZeroIsExpected){
 input="";
