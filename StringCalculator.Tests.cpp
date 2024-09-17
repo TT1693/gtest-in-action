@@ -23,4 +23,10 @@ TEST(StringCalculatorTestSuite,add_oneInputString_oneIsExpected){
     int expectedValue=1;
     int actualValue=Add(input);
     ASSERT_EQ(actualValue,expectedValue);
+
+  TEST(StringCalculatorTestSuite,add_twoInputString_sumIsExpected){
+    string input="1,2";
+    int expectedValue=3;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
 }
