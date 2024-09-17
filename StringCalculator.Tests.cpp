@@ -23,10 +23,32 @@ TEST(StringCalculatorTestSuite,add_oneInputString_oneIsExpected){
     int expectedValue=1;
     int actualValue=Add(input);
     ASSERT_EQ(actualValue,expectedValue);
+}
 
   TEST(StringCalculatorTestSuite,add_twoInputString_sumIsExpected){
     string input="1,2";
     int expectedValue=3;
     int actualValue=Add(input);
     ASSERT_EQ(actualValue,expectedValue);
+  }
+
+    TEST(StringCalculatorTestSuite,add_multipleInputString_sumIsExpected){
+    string input="1,2,3";
+    int expectedValue=6;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
+    }
+
+    TEST(StringCalculatorTestSuite,add_InputStringwithnewline_sumIsExpected){
+    string input="1\n2,3";
+    int expectedValue=6;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);
+    }
+
+    TEST(StringCalculatorTestSuite,add_InputStringwithdelimiter_delimiterBasedSumIsExpected){
+    string input="//;\n1;2";
+    int expectedValue=3;
+    int actualValue=Add(input);
+    ASSERT_EQ(actualValue,expectedValue);    
 }
