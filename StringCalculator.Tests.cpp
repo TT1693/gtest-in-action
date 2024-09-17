@@ -55,9 +55,7 @@ TEST(StringCalculatorTestSuite,add_oneInputString_oneIsExpected){
 
     TEST(StringCalculatorTestSuite,add_InputStringWithNegative_invalidArgumentIsExpected){
     string input="1,-2,-4,5";
-    int expectedValue=0;
-    int actualValue=Add(input);
-    ASSERT_EQ(actualValue,expectedValue);
+    EXPECT_ANY_THROW("Negatives not allowed: -2,-4");
     }
 
     TEST(StringCalculatorTestSuite,add_InputStringOver1000_ignoreThatNumberIsExpected){
