@@ -11,11 +11,11 @@ public:
 };
 
 class StringCalculatorDataDrivenFixture:public testing::Test{
+
 protected:
-        vector<TestDataPair> dataList;
+  vector<TestDataPair*> dataList;
 
-
-    //Before Each Test Case
+   //Before Each Test Case
   void SetUp(){
       dataList.push_back(new TestDataPair { "",0});
       dataList.push_back(new TestDataPair { "0",0});
@@ -35,9 +35,8 @@ TEST_F(StringCalculatorDataDrivenFixture,DataDrivenTestCase){
         ASSERT_EQ(actualValue,dataPairPtr->expectedValue);
     }
 }
-
 TEST(StringCalculatorDataDrivenTestSuite,DataDrivenTestCase){
-  //vector<TestDataPair> dataList; moved to above fixture
+
   TestDataPair pair_one { "",0};
   TestDataPair pair_two { "0",0};
   TestDataPair pair_three { "1",1};
@@ -55,5 +54,3 @@ TEST(StringCalculatorDataDrivenTestSuite,DataDrivenTestCase){
         int actualValue=Add(dataPair.input);
         ASSERT_EQ(actualValue,dataPair.expectedValue);
     }
-
-}
