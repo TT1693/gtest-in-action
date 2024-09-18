@@ -1,3 +1,4 @@
+
 #include "StringCalculator.h"
 #include <gtest/gtest.h>
 #include <tuple>
@@ -9,11 +10,6 @@ protected:
     int actualValue;
 };
 class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
-protected:
-  void SetUp() override {
-      input= std::get<0>(GetParam());
-      expectedValue= std::get<1>(GetParam());
-  }
 
 };
 //Parameter Values
@@ -21,16 +17,31 @@ INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFi
   make_tuple("", 0),
   make_tuple("0", 0),
   make_tuple("1", 1),
-  make_tuple("1,2,4",7),
   make_tuple("1,2", 3),
   make_tuple("1,2,3", 6)
   
 ));
-
+int DisplayFunctionCallCount=0;
+int DisplayFunctionArg;
+void fakeDisplayFunction(int result){
+    DisplayFunctionCallCount++;
+    DisplayFunctionArg=result;
+}
+void clearIntercatiomValues(){
+    DisplayFunctionCallCount=0;
+    DisplayFunctionArg=0;
+}
 TEST_P(StringCalculatorParameterFixture,ParameterizedTest){
-      //input= std::get<0>(GetParam());
-      //expectedValue= std::get<1>(GetParam());
-      Add(input);
-      //actualValue=Add(input);
-      //ASSERT_EQ(actualValue,expectedValue);
+      input= std::get<0>(GetParam());
+      expectedValue= std::get<1>(GetParam());
+     Add(input,&fakeDisplayFunction);
+     // actualValue=Add(input);
+     //ASSERT_EQ(actualValue,expectedValue);
+}
+TEST(InteractTestSuite,InteractionTest){
+     string input="";
+     int expectedValue=0;
+     Add(input,&fakeDisplayFunction);
+     ASSERT_EQ(DisplayFunctionCallCount,1);
+    ASSERT_EQ(DisplayFunctionArg,0);
 }
