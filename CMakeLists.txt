@@ -21,7 +21,9 @@ add_executable(
   StringCalculator.cpp
   #StringCalculator.Tests.cpp
   #StringCalculatorDataDriven.Tests.cpp
-  ValueParameterizationTest.cpp
+  #ValueParameterizationTest.cpp
+  StringCalculator.cpp
+  InteractionTests.cpp
  )
 target_link_libraries(
   cleancode
