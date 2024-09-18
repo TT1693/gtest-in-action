@@ -51,5 +51,5 @@ int Add(const string &input) {
 
 	check_for_negatives(numbers);
 
-	return accumulate(numbers.begin(), numbers.end(), 0);
+	cout<< accumulate(numbers.begin(), numbers.end(), 0);
 }
