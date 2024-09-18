@@ -1,1 +1,1 @@
-void alertInCelcius
+void alertInCelcius(float farenheit);
