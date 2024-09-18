@@ -16,6 +16,7 @@ INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFi
   make_tuple("", 0),
   make_tuple("0", 0),
   make_tuple("1", 1),
+  make_tuple("1,2,4",10),
   make_tuple("1,2", 3),
   make_tuple("1,2,3", 6)
   
