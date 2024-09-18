@@ -54,3 +54,4 @@ TEST(StringCalculatorDataDrivenTestSuite,DataDrivenTestCase){
         int actualValue=Add(dataPair.input);
         ASSERT_EQ(actualValue,dataPair.expectedValue);
     }
+}
