@@ -13,7 +13,6 @@ void ResetIntercationValues(){
     DisplayFunctionArg=0;
 }
 TEST(InteractionTestSuite,InteractionTest){
-
   string input="1,2";
   Add(input,&MockDisplayFunction);
   EXPECT_EQ(DisplayFunctionCallCount,1);
