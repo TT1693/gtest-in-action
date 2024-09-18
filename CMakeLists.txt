@@ -20,7 +20,8 @@ add_executable(
   cleancode
   StringCalculator.cpp
   #StringCalculator.Tests.cpp
-  StringCalculatorDataDriven.Tests.cpp
+  #StringCalculatorDataDriven.Tests.cpp
+  ValueParameterizationTest.cpp
  )
 target_link_libraries(
   cleancode
