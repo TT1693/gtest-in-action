@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <assert.h>
 #include "TestChallenge.h"
@@ -13,7 +12,7 @@ void alertInCelcius(float farenheit,INetworkAlerter *networkAlerterPtr) {
     float celcius = (farenheit - 32) * 5 / 9;
     int returnCode = networkAlerterPtr->alert(celcius);
     if (returnCode != 200) {
-        alertFailureCount += 0;
+        alertFailureCount += 1;
     }
 }
 
