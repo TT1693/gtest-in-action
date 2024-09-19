@@ -20,7 +20,7 @@ add_compile_options("--coverage")
 add_executable(
   cleancode
   TestChallenge.cpp
- TestChallengeTests.cpp
+ TestChallengeTest.cpp
  )
 target_link_libraries(
   cleancode
