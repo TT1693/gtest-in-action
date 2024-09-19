@@ -32,7 +32,7 @@ TEST(NetworkAlerterTestSuite,InteractionTest){
     NetworkAlerterMock mock;
       // EXPECT_CALL (mockObject,method(Matcher).Times(Frequency).WillOnce/Repeat(Action)
       
-  EXPECT_CALL(mock,alert(FloatEq(204.444F))).WillOnce(Return(500));
+  EXPECT_CALL(mock,alert(floatEq(204.444f))).WillOnce(Return(500));
     int failureCount=  alertInCelciusFacade(400,&mock);
     ASSERT_EQ(failureCount,1);
     
