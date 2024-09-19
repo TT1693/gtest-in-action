@@ -1,3 +1,4 @@
+
 #include "StringCalculator.h"
 #include <gtest/gtest.h>
 #include <vector>
@@ -54,4 +55,5 @@ TEST(StringCalculatorDataDrivenTestSuite,DataDrivenTestCase){
         int actualValue=Add(dataPair.input);
         ASSERT_EQ(actualValue,dataPair.expectedValue);
     }
+
 }
