@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.14)
 project(cleancode)
 
@@ -19,7 +20,7 @@ add_compile_options("--coverage")
 add_executable(
   cleancode
   TestChallenge.cpp
- TestChallengeTest.cpp
+ TestChallengeTests.cpp
  )
 target_link_libraries(
   cleancode
