@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 #include "TestChallenge.h"
 #include <gmock/gmock.h>
-using testing::DoubleEq;//matcher used to asset on method arguments
+using testing::FloatEq;//matcher used to asset on method arguments
 using testing::Return; // Return value of mock function
 //Stub - Fake Dependency
 class NetworkAlerterStub:public INetworkAlerter{
@@ -26,7 +26,7 @@ TEST(NetworkAlerterTestSuite,StateBasedTest){
   NetworkAlerterStub stub;
     int failureCount=  alertInCelciusFacade(400,&stub);
     ASSERT_EQ(failureCount,1);
-      EXPECT_DOUBLE_EQ(stub.celciusArg,204.444);
+      EXPECT_FLOAT_EQ(stub.celciusArg,204.444);
 }
 TEST(NetworkAlerterTestSuite,InteractionTest){
     NetworkAlerterMock mock;
